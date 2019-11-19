@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+body{
+  background-color: #1f253d;
+}
+/* menu demo styles */
+.menu{
+    font-family: 'Montserrat';
+    background: -webkit-linear-gradient(to right, #922c93, #394264);
+    background: linear-gradient(to right, #922c93, #394264);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24);
+    opacity: 0.96;
+  }
+.page{
+  width: 99.35%;
+}
+/* MANTENHA EM: 99.35% para pegar a página toda.*/
+
+.img{
+  max-height: 50px;
+  max-width: 35px;
+  margin-left: 50px;
+}
+  
+  .menu__list{
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 0px;
+    margin-bottom: 0;
+    list-style: none;  
+  }
+  
+  .menu__link{
+    display: block;
+    padding: 1rem 2rem;
+    will-change: color;
+    transition: color .25s ease-out;  
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  
+  .menu__link:focus{
+    outline: 2px solid #fff;
+  }
+  
+  @media (min-width: 601px){
+  
+    .menu__list{
+      display: flex;  
+    }
+  
+    .menu__group{
+      flex-grow: 1;
+    }
+  
+    .menu__link{
+      position: relative;
+      overflow: hidden;
+    }
+  
+    .menu__link:before, .menu__link:after{
+      content: "";
+      width: 0;
+      height: 3px;
+      background-color: #fff;
+  
+      will-change: width;
+      transition: width .05s ease-out;
+  
+      position: absolute;
+      bottom: 0;
+    }
+  
+    .menu__link:before{
+      left: 50%;
+      transform: translateX(-50%); 
+    }
+  
+    .menu__link:after{
+      right: 50%;
+      transform: translateX(50%); 
+    }
+  
+    .menu__link:hover:before, .menu__link:hover:after{
+      width: 100%;
+      transition-duration: .15s;
+      text-decoration: none;
+    }
+  }
+  
+  /* hover effect */
+  
+  .menu:hover .menu__link:not(:hover){
+    color: #000000;
+  }
+  
+  /* 
+  Patreon
+  */
+  
+  .patreon{
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
+    text-align: center;
+    background-color: #fffdee;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .patreon__container{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .patreon__link{
+    text-decoration: underline;
+    color: #ff4242;
+  }
+/* FOOTER */
+
+footer {
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 999;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer i {
+    color: red;
+}
+
+footer a {
+    color: #3c97bf;
+    text-decoration: none;
+}
+/*FOOTER */
+
+  /* SEPARACAO */
+body{
+  background: #f6f5f7;
+  font-family: 'Montserrat';
+}
+
+img{
+  margin-left: -10px;
+  width: 101.2%;
+  height: 800px;
+}
+
+.Boas-Vindas{
+    color: rgb(255, 255, 255);
+    border: 3px black;
+    text-shadow: #070707;
+    font-weight: 500;
+    margin-top:-300px;
+    left:30px;
+}
+
+.Quadrado{
+  background-color: black;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24);
+  opacity: 0.85;
+  width:25%;
+  padding: 1% 2%;
+  border-radius: 30px;
+}
+
+main{
+  margin-top: 120px;
+}
+
+a:hover{
+  color: white; 
+}

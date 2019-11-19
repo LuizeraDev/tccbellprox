@@ -1,0 +1,60 @@
+.area1{
+    color: aqua;
+    border: 1px solid red;
+    height: 100%;
+ 
+}
+.area2{
+
+    border: 1px solid red;
+    height: 100%;
+
+}
+
+.area3{
+    color: aqua;
+    border: 1px solid red;
+    height: 100%;
+
+} 
+
+.center{
+  margin: 10px auto;
+
+}
+.imagens{
+  margin:10px auto;
+}
+.imagem1, .imagem2, .imagem3{
+  float:left; 
+
+}
+.veja-mais{
+  border: 1px solid red;
+}
+
+/*imagem avatar*/
+  /*.avatar {
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }*/
+
+/*Avaliação do profissional*/
+
+.estrelas input[type=radio] {
+  display: none;
+}
+.estrelas label i.fa:before {
+  content:'\f005';
+  color: #FC0;
+}
+.estrelas input[type=radio]:checked ~ label i.fa:before {
+  color: #CCC;
+}
+
+/*------------------*/
+.nome{
+  font-size: 24px;
+}

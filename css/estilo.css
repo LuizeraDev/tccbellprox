@@ -1,0 +1,126 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+#home{
+	padding-bottom: 500%;
+	
+}
+
+.caixa{
+	padding:60px 0;
+	border-bottom: 1px solid #e5e5e5; 
+
+}
+
+
+nav{
+	background: #048ABF;
+	color: white;	
+}
+
+
+#deseja{
+	margin-bottom: 130px; 
+}
+
+.corsite{
+	background:#048ABF;
+	color: #fff;
+}
+
+.texto{
+	display: block;
+}
+
+.rodape a:hover{
+	color: #04BF9D;
+
+}
+#home{
+	padding: 7% 0 7% 0;
+	background-color: white;
+
+}
+.final{
+	margin-bottom: 0;
+}
+#baixo{
+	padding: 50px;
+}
+
+.saiba {
+	color: #04BF9D;
+
+}
+section a{
+	color: #04BF9D;
+
+
+} 
+
+section a:hover{
+
+
+color:#D96277;
+} 
+
+
+.modelo-container{
+	width: 100vw;
+	height: 100vh;
+	background-color: rgb(0,0,0, .5);
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 2000;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.modelo-container.mostrar{
+	display: flex;
+
+}
+
+.modelo{
+	background-color: white;
+	width: 60%;
+	min-width: 300px;
+	padding: 48px;
+	border: 10px solid #048ABF;
+	box-shadow: 0 0 0 10px white;
+	position: relative;
+
+}
+@keyframes modelo{
+	from{
+		opacity: 0;
+		transform: translate(0, -60px. 0);
+
+	}
+	to{
+		opacity: 1;
+		transform: translate(0, 0. 0);
+
+	}
+}
+.mostrar{
+	animation: modelo .3s;
+
+}
+.fechar{
+	font-size: 1.2em;
+	position: absolute;
+	top:-30px;
+	right:-30px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	border:4px solid white;
+	background: #048ABF;
+	color: white;
+	cursor: pointer;
+	box-shadow: 0 4px 4px 0 rgb(0,0,0, .3);
+}

@@ -1,0 +1,27 @@
+.corpo{
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+#conteudo-lateral{
+	background: #08b7c0;
+	height: 100%;
+	position: fixed;
+}
+#conteudo-lateral-falso{
+
+	height: 100%;
+	float: left;	
+
+}
+#conteudo-corpo{
+	float: left;
+}
+ .centraliza{
+margin: 10px auto;
+
+ }
+.conteudo{
+ 	border: 1px solid red;
+ }
