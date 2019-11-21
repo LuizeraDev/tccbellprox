@@ -4,6 +4,13 @@
 include('select-servicos.php');
 $ds_confirmacao_agendamento = $resultados_agendamento['ds_confirmacao_agendamento'];
 
+function inverteData($data){
+    if(count(explode("/",$data)) > 1){
+        return implode("-",array_reverse(explode("/",$data)));
+    }elseif(count(explode("-",$data)) > 1){
+        return implode("/",array_reverse(explode("-",$data)));
+    }
+}
 
 ?>
     <div class="container">
@@ -26,12 +33,7 @@ $ds_confirmacao_agendamento = $resultados_agendamento['ds_confirmacao_agendament
             </div>
 
             <div class="col-md-6 ">
-                <pre>
-                    <?php 
-                    var_dump($resultados_agendamento);
-                    var_dump($informacoes);
-                    ?>
-                </pre>
+
                 <h2 class="text-center ">Destaques da Semana</h2>
                 <div class="container ">
                     <div class="row">
@@ -45,12 +47,12 @@ $ds_confirmacao_agendamento = $resultados_agendamento['ds_confirmacao_agendament
                                     <div class="col-md">
                                         <div class="card-body">
                                             <h5 class="card-title">Agendamento com </h5>
-                                                <p class="card-text ">data dos agendamentos<br><?php echo $resultados_agendamento['dt_agendamento']; ?><br><br></p>
+                                                <p class="card-text ">data dos agendamentos<br><?php echo  inverteData($resultados_agendamento['dt_agendamento']); ?><br><br></p>
                                                 <?php 
                                                
                                                 if ($ds_confirmacao_agendamento == 1){
-                                                    echo"img src='../img/img1.png' ";
-                                                    echo"o agendamento está confimado";
+                                                    echo"<img src='../img/img1.png' style='margin-top: -50px; width:50px; height:50px;'> <br>";
+                                                    echo"<strong>O agendamento foi confirmado com sucesso.</strong><br>";
 
                                                 }else {
                                                     echo "<h5><b>Pendente</b></h5>";
