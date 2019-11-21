@@ -1,0 +1,78 @@
+/* Import Roboto Font */
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+/* Basic CSS styles & resets */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+html,
+body {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+}
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: #6c17e1;
+  background: linear-gradient(40deg, #4a00e0, #8e2de2);
+}
+
+.card {
+  display: block;
+  width: 300px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 32px 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+/** Input styling **/
+.text-input {
+  position: relative;
+  display: block;
+  height: 56px;
+  width: 100%;
+  margin-bottom:16px;
+}
+.text-input > input {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+  border: 0;
+  border-bottom: 1px solid #9e9e9e;
+  outline: 0;
+  padding: 0 8px;
+  /*   transition: all 1s ease-in-out; */
+}
+.text-input > input::placeholder {
+  color: transparent;
+}
+.text-input > label {
+  position: absolute;
+  bottom: 12px;
+  left: 9px;
+  color: #9e9e9e;
+  cursor: text;
+  transition: all 0.2s ease-in-out;
+}
+.text-input > input:focus,
+.text-input > input:not(:placeholder-shown) {
+  border-bottom: 2px solid #6c17e1;
+}
+.text-input > input:focus + label,
+.text-input > input:not(:placeholder-shown) + label {
+  bottom: 40px;
+  left: 0;
+  font-size: 14px;
+  color: #6c17e1;
+}

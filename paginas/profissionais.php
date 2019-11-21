@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="../index/main.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="../css/profEstilo.css" />
+    <link rel="stylesheet" type="text/css" href="../css/estiloModal.css" />
 </head>
 
 <body>
@@ -48,6 +49,17 @@
                                     aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
+
+
+
+
+                                                <!-- the text-input class will be used as parent for input styling -->
+
+                                                    <div class="text-input">
+                                                    <input id="password" type="password" placeholder="Password" autocomplete="off" required />
+                                                    <label for="password">Password</label>
+                                                </div>
+
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="exampleModalLongTitle">Agendar com Paulo?</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -56,9 +68,11 @@
                                             </div>
                                             <div class="modal-body">
                                                 <form action="realizarAgendamento.php" method="POST">
-                                                Qual data voce deseja?<br>
-                                                <input type="date"  name="data" placeholder="Digite a data desejada"><br>
                                                 <br>
+                                                <div class="text-input">
+                                                    <input id="username" type="text" placeholder="Qual data voce deseja?" autocomplete="off" required />
+                                                    <label for="username">Qual data voce deseja?</label>
+                                                </div>
                                                 <input type="time"  name="tempo" placeholder="Digite a hora desejada"><br>
                                                 <br>
                                                 <input type="text" name="msg" placeholder="Mensagem(OPCIONAL)">

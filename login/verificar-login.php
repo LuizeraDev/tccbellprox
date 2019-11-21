@@ -49,15 +49,12 @@ if(isset($_POST['login'])){
         $_SESSION['usu_email']= $login_usuario;
 
         if($resultado[0]['cd_cpf_cliente'] == null || $resultado[0]['dt_nasc_cliente'] == null|| $resultado[0]['cd_logradouro'] == null){
-            echo"<meta charset='utf-8'>
-        <script language='javascript' type='text/javascript'>
-        alert('Seu Cadastro sera direcionado para completar informações necessarias!');
-        window.location.href='cadastro-completo/cadastro.php';</script>";
+            header("location:../paginas/index.php"); // direciona para a index
 
         
         }
         else{
-            header("location:../paginas/index.php"); // direciona para a index
+            echo "não foi";
         }
     }else{
         echo "<script>confirm('login ou senha invalidos, tente novamente!', window.location.href='login.php')</script> ";
