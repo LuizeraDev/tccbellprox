@@ -18,22 +18,6 @@ CREATE SCHEMA IF NOT EXISTS `db_bellprox` DEFAULT CHARACTER SET utf8 ;
 USE `db_bellprox` ;
 
 -- -----------------------------------------------------
--- Table `db_bellprox`.`tb_endereco`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `db_bellprox`.`tb_endereco` (
-  `cd_endereco` INT(11) NOT NULL AUTO_INCREMENT,
-  `cep` VARCHAR(250) NULL DEFAULT NULL,
-  `nm_rua` VARCHAR(250) NULL DEFAULT NULL,
-  `nm_bairro` VARCHAR(250) NULL DEFAULT NULL,
-  `nm_cidade` VARCHAR(250) NULL DEFAULT NULL,
-  `nm_estado` VARCHAR(250) NULL DEFAULT NULL,
-  PRIMARY KEY (`cd_endereco`))
-ENGINE = InnoDB
-AUTO_INCREMENT = 13
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
 -- Table `db_bellprox`.`tb_cliente`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_bellprox`.`tb_cliente` (
@@ -46,14 +30,7 @@ CREATE TABLE IF NOT EXISTS `db_bellprox`.`tb_cliente` (
   `dt_nasc_cliente` VARCHAR(45) NULL DEFAULT NULL,
   `cd_senha_cliente` VARCHAR(256) NULL DEFAULT NULL,
   `ds_caminho_img` VARCHAR(256) NULL DEFAULT NULL,
-  `cd_endereco` INT(11) NULL DEFAULT NULL,
-  PRIMARY KEY (`cd_cliente`),
-  INDEX `fk_tb_cliente_tb_logradouro_idx` (`cd_endereco`),
-  CONSTRAINT `fk_tb_cliente_tb_endereco`
-    FOREIGN KEY (`cd_endereco`)
-    REFERENCES `db_bellprox`.`tb_endereco` (`cd_endereco`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`cd_cliente`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 5
 DEFAULT CHARACTER SET = utf8;
@@ -73,14 +50,7 @@ CREATE TABLE IF NOT EXISTS `db_bellprox`.`tb_profissional` (
   `cd_senha_profissional` VARCHAR(256) NULL DEFAULT NULL,
   `ds_formacao_profissional` VARCHAR(256) NULL DEFAULT NULL,
   `ds_caminho_img` VARCHAR(256) NULL DEFAULT NULL,
-  `cd_endereco` INT(11) NULL DEFAULT NULL,
-  PRIMARY KEY (`cd_profissional`),
-  INDEX `fk_tb_profissional_tb_logradouro_idx` (`cd_endereco`),
-  CONSTRAINT `fk_tb_profissional_tb_endereco`
-    FOREIGN KEY (`cd_endereco`)
-    REFERENCES `db_bellprox`.`tb_endereco` (`cd_endereco`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`cd_profissional`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8;
@@ -91,7 +61,7 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_bellprox`.`tb_agendamento` (
   `cd_agendamento` INT(11) NOT NULL AUTO_INCREMENT,
-  `dt_agendamento` date DEFAULT NULL,
+  `dt_agendamento` DATE NULL DEFAULT NULL,
   `hr_agendamento` TIME NULL DEFAULT NULL,
   `cd_cliente` INT(11) NULL DEFAULT NULL,
   `cd_profissional` INT(11) NULL DEFAULT NULL,
@@ -115,6 +85,52 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
+-- Table `db_bellprox`.`tb_endereco_cliente_profissional`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `db_bellprox`.`tb_endereco_cliente_profissional` (
+  `cd_tb_endereco_c_p` INT NOT NULL,
+  `cd_profissional` INT NULL,
+  `cd_cliente` INT NULL,
+  PRIMARY KEY (`cd_tb_endereco_c_p`),
+  INDEX `tb_endereco_c_p_cliente_idx` (`cd_cliente`),
+  INDEX `tb_endereco_c_p_profissional_idx` (`cd_profissional`),
+  CONSTRAINT `tb_endereco_c_p_cliente`
+    FOREIGN KEY (`cd_cliente`)
+    REFERENCES `db_bellprox`.`tb_cliente` (`cd_cliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `tb_endereco_c_p_profissional`
+    FOREIGN KEY (`cd_profissional`)
+    REFERENCES `db_bellprox`.`tb_profissional` (`cd_profissional`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `db_bellprox`.`tb_endereco`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `db_bellprox`.`tb_endereco` (
+  `cd_endereco` INT(11) NOT NULL AUTO_INCREMENT,
+  `cep` VARCHAR(250) NULL DEFAULT NULL,
+  `nm_rua` VARCHAR(250) NULL DEFAULT NULL,
+  `nm_bairro` VARCHAR(250) NULL DEFAULT NULL,
+  `nm_cidade` VARCHAR(250) NULL DEFAULT NULL,
+  `nm_estado` VARCHAR(250) NULL DEFAULT NULL,
+  `cd_tb_endereco_c_p` INT NULL,
+  PRIMARY KEY (`cd_endereco`),
+  INDEX `fk_endereco_tb_endereco_c_p_idx` (`cd_tb_endereco_c_p`),
+  CONSTRAINT `fk_endereco_tb_endereco_c_p`
+    FOREIGN KEY (`cd_tb_endereco_c_p`)
+    REFERENCES `db_bellprox`.`tb_endereco_cliente_profissional` (`cd_tb_endereco_c_p`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 13
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
 -- Table `db_bellprox`.`tb_servico`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_bellprox`.`tb_servico` (
@@ -123,7 +139,7 @@ CREATE TABLE IF NOT EXISTS `db_bellprox`.`tb_servico` (
   `ds_servico` VARCHAR(256) NULL DEFAULT NULL,
   PRIMARY KEY (`cd_servico`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 3
+AUTO_INCREMENT = 6
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -206,4 +222,6 @@ INSERT INTO `tb_servico_agendamento` (`cd_servico_agendamento`, `cd_agendamento`
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
 
