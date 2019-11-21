@@ -3,8 +3,6 @@
 //Acesso ao Banco de Dados
 include('conecta-banco.php');
 
-
-
 //obtem os valores digitados
 $nome = $_POST["username"];
 $senha = $_POST["password"];
