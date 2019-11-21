@@ -110,7 +110,7 @@ $ds_confirmacao_agendamento = $resultados_agendamento['ds_confirmacao_agendament
 
             <div class="col-md-3">
                 <h2>Meu Perfil</h2>
-                <form class="imagem" action="/fotos/upload.php" method="POST" enctype="multipart/form-data" >
+                <form class="imagem" action="../paginas/fotos/upload.php" method="POST" enctype="multipart/form-data" >
                     <br />
                     <?php
 
@@ -126,7 +126,11 @@ $ds_confirmacao_agendamento = $resultados_agendamento['ds_confirmacao_agendament
                     <br/>
 
                     <h2 class="text-center">
-                        <?php  if(isset($informacoes)){ if($informacoes != null){ echo $informacoes[0]['nm_cliente'];}} else {echo $resultado_prof[0]['nm_profissional'];}; // var_dump($nome_cliente[0]['nm_cliente']);?></p>
+                        <p>
+                        <?php  
+                        echo $informacoes[0]['nm_cliente'];
+                        ?>
+                        </p>
                     </h2>
 
                     
