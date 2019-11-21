@@ -226,7 +226,7 @@ INSERT INTO `tb_profissional` (`cd_profissional`, `nm_profisisonal`, `cd_tel_fix
 --
 
 CREATE TABLE IF NOT EXISTS `tb_servico` (
-  `cd_servico` int(11) NOT NULL,
+  `cd_servico` int(11) NOT NULL auto_increment,
   `nm_servico` varchar(256) DEFAULT NULL,
   `ds_servico` varchar(256) DEFAULT NULL,
   PRIMARY KEY (`cd_servico`)
