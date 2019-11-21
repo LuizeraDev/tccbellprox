@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: localhost
--- Data de Criação: 21-Nov-2019 às 01:09
+-- Data de Criação: 21-Nov-2019 às 01:23
 -- Versão do servidor: 5.6.13
 -- versão do PHP: 5.4.17
 
@@ -143,7 +143,7 @@ CREATE TABLE IF NOT EXISTS `tb_cliente` (
 
 INSERT INTO `tb_cliente` (`cd_cliente`, `nm_cliente`, `cd_tel_fixo_cliente`, `cd_tel_cell_cliente`, `nm_email_cliente`, `cd_cpf_cliente`, `dt_nasc_cliente`, `cd_senha_cliente`, `ds_caminho_img`, `cd_logradouro`) VALUES
 (1, 'Yago Silva de Jesus', '1334063601', '2147483647', 'yago@hotmail.com', '1822831008', '1996/02/20', '123', NULL, 3),
-(2, 'Camila Prieto Martins', '1334638303', '2147483647', 'camila@gmail.com', '2147483647', '2002/09/15', '123', 'camila.jpg', 1),
+(2, 'Camila Prieto Martins', '1334638303', '2147483647', 'camila@gmail.com', '2147483647', '2002/09/15', '123', 'wallpaper_etec.jpg', 1),
 (3, 'Davi', NULL, '0', 'davi@gmail.com', NULL, NULL, '123', NULL, NULL),
 (4, 'davi ', NULL, '(13) 9978-54245', 'davi@hotmail.com', NULL, NULL, '123', NULL, NULL);
 
@@ -202,7 +202,7 @@ INSERT INTO `tb_logradouro` (`cd_logradouro`, `nm_endereco`, `ds_complemento`, `
 
 CREATE TABLE IF NOT EXISTS `tb_profissional` (
   `cd_profissional` int(11) NOT NULL AUTO_INCREMENT,
-  `nm_profisisonal` varchar(256) DEFAULT NULL,
+  `nm_profissional` varchar(256) DEFAULT NULL,
   `cd_tel_fixo_profissional` varchar(250) DEFAULT NULL,
   `cd_tel_cell_profissional` varchar(250) DEFAULT NULL,
   `nm_email_profissional` varchar(256) DEFAULT NULL,
@@ -214,14 +214,15 @@ CREATE TABLE IF NOT EXISTS `tb_profissional` (
   `cd_logradouro` int(11) DEFAULT NULL,
   PRIMARY KEY (`cd_profissional`),
   KEY `fk_tb_profissional_tb_logradouro_idx` (`cd_logradouro`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Extraindo dados da tabela `tb_profissional`
 --
 
-INSERT INTO `tb_profissional` (`cd_profissional`, `nm_profisisonal`, `cd_tel_fixo_profissional`, `cd_tel_cell_profissional`, `nm_email_profissional`, `cd_cpf_profissional`, `dt_nasc_profissional`, `cd_senha_profissional`, `ds_formacao_profissional`, `ds_caminho_img`, `cd_logradouro`) VALUES
-(1, 'Luiz Guilherme Gomes', '1333333333', '1399627706', 'luiz@gmail.com', '1086652754', '2001-12-26', '123', 'Manicure', NULL, 4);
+INSERT INTO `tb_profissional` (`cd_profissional`, `nm_profissional`, `cd_tel_fixo_profissional`, `cd_tel_cell_profissional`, `nm_email_profissional`, `cd_cpf_profissional`, `dt_nasc_profissional`, `cd_senha_profissional`, `ds_formacao_profissional`, `ds_caminho_img`, `cd_logradouro`) VALUES
+(1, 'Luiz Guilherme Gomes', '1333333333', '1399627706', 'luiz@gmail.com', '1086652754', '2001-12-26', '123', 'Manicure', NULL, 4),
+(2, 'Gustavo', NULL, '(12) 3123-123213', 'gustavo@gmail.com', NULL, NULL, '123', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 

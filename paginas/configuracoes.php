@@ -29,7 +29,6 @@ include "../login/confirma-login-paginas.php";
       <?php  if(isset($informacoes)){ if($informacoes != null){ echo $informacoes[0]['nm_cliente'];}} else {echo $resultado_prof[0]['nm_profissional'];}; // var_dump($nome_cliente[0]['nm_cliente']);?></p>
       <p><i class="fas fa-envelope">&nbsp;</i>Email: 
       <?php if(isset($informacoes)){if($informacoes != null){ echo $informacoes[0]['nm_email_cliente'];}} else{echo $resultado_prof[0]['nm_email_profissional'];}?></p>
-      <?php echo $informacoes[0]['cd_cliente']; ?>
     </div>
     <hr>
   </header>

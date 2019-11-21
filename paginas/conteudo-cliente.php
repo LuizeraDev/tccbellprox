@@ -133,13 +133,8 @@ function inverteData($data){
                         echo $informacoes[0]['nm_cliente'];
                         ?>
                         </p>
-                    </h2>
-
-                    
-                    
+                    </h2>             
                     <br>                    
-                    <a href="">alterar Foto </a>
-
                 </form>
 
                 
