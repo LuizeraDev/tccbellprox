@@ -4,6 +4,7 @@
 
  // Acesso ao banco de dados
 include('conecta-banco.php');
+include('endereco.php');
 
 if(isset($_POST['radiobutton2'])){
 //PEGA OS VALORES DOS RADIO BUTTONS CLIENTE E PROFISSIONAL
