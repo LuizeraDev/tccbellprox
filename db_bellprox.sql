@@ -88,7 +88,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `db_bellprox`.`tb_endereco_cliente_profissional`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_bellprox`.`tb_endereco_cliente_profissional` (
-  `cd_tb_endereco_c_p` INT NOT NULL,
+  `cd_tb_endereco_c_p` INT(11) NOT NULL AUTO_INCREMENT,
   `cd_profissional` INT NULL,
   `cd_cliente` INT NULL,
   PRIMARY KEY (`cd_tb_endereco_c_p`),
@@ -222,6 +222,4 @@ INSERT INTO `tb_servico_agendamento` (`cd_servico_agendamento`, `cd_agendamento`
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
-
 
