@@ -1,5 +1,11 @@
 <?php
-include "../login/confirma-login-paginas.php";
+$servidor = "localhost";
+$usuario_bd = "root";
+$senha_bd = "usbw";
+$banco = "db_bellprox";
+  
+$con = new mysqli($servidor, $usuario_bd, $senha_bd, $banco);
+
 if( $_FILES ) { // Verificando se existe o envio de arquivos.
 	
 	if(isset($_FILES['arquivo']) ) { // Verifica se o campo não está vazio.
@@ -17,7 +23,7 @@ if( $_FILES ) { // Verificando se existe o envio de arquivos.
 			echo"<meta charset='utf-8'>
 			<script language='javascript' type='text/javascript'>
 			alert('Foto adicionada!');
-			window.location.href='index.php';</script>";
+			window.location.href='../index.php';</script>";
 			 
 		}else {
 			echo "<p align=center>O arquivo não pode ser copiado para o servidor.</p>";
