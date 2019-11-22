@@ -30,6 +30,8 @@ if(isset($_POST['login'])){
     $_SESSION['cd_tel_cell_cliente'] = $informacoes; //NECESSARIO
     $_SESSION['nm_cliente'] = $informacoes; //NECESSARIO
     $_SESSION['cd_cliente'] = $informacoes; //NECESSARIO
+    
+
      /* 
     foreach ($result as $linha => $coluna) {
         var_dump($coluna['nm_cliente']);
