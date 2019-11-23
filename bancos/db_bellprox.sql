@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.2
+-- version 3.4.9
 -- http://www.phpmyadmin.net
 --
--- Máquina: localhost
--- Data de Criação: 22-Nov-2019 às 22:43
--- Versão do servidor: 5.6.13
--- versão do PHP: 5.4.17
+-- Servidor: localhost
+-- Tempo de Geração: 22/11/2019 às 06h59min
+-- Versão do Servidor: 5.5.20
+-- Versão do PHP: 5.3.9
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -17,10 +17,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de Dados: `db_bellprox`
+-- Banco de Dados: `db_bellprox`
 --
-CREATE DATABASE IF NOT EXISTS `db_bellprox` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `db_bellprox`;
 
 -- --------------------------------------------------------
 
@@ -38,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `tb_agendamento` (
   PRIMARY KEY (`cd_agendamento`),
   KEY `fk_tb_agendamento_tb_cliente_idx` (`cd_cliente`),
   KEY `fk_tb_agendamento_tb_profissional_idx` (`cd_profissional`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
 
 --
 -- Extraindo dados da tabela `tb_agendamento`
@@ -58,8 +56,7 @@ INSERT INTO `tb_agendamento` (`cd_agendamento`, `dt_agendamento`, `hr_agendament
 (15, '2019-11-02', '21:00:00', 2, 3, NULL),
 (16, '2019-11-02', '21:00:00', 2, 3, NULL),
 (17, '2019-11-02', '21:00:00', 2, 3, NULL),
-(18, '2019-12-30', '00:02:00', 2, 3, NULL),
-(19, '2019-12-24', '20:00:00', 2, 3, 1);
+(18, '2019-12-30', '00:02:00', 2, 3, NULL);
 
 -- --------------------------------------------------------
 
@@ -86,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `tb_cliente` (
 
 INSERT INTO `tb_cliente` (`cd_cliente`, `nm_cliente`, `cd_tel_fixo_cliente`, `cd_tel_cell_cliente`, `nm_email_cliente`, `cd_cpf_cliente`, `dt_nasc_cliente`, `cd_senha_cliente`, `ds_caminho_img`) VALUES
 (1, 'Yago Silva de Jesus', '1334063601', '2147483647', 'yago@hotmail.com', '1822831008', '1996/02/20', '123', NULL),
-(2, 'Camila Prieto Martins', '1334638303', '2147483647', 'camila@gmail.com', '2147483647', '2002/09/15', '123', 'Koala.jpg'),
+(2, 'Camila Prieto Martins', '1334638303', '2147483647', 'camila@gmail.com', '2147483647', '2002/09/15', '123', 'camila.jpg'),
 (3, 'Davi', NULL, '0', 'davi@gmail.com', NULL, NULL, '123', NULL),
 (4, 'davi ', NULL, '(13) 9978-54245', 'davi@hotmail.com', NULL, NULL, '123', NULL);
 
@@ -175,7 +172,7 @@ CREATE TABLE IF NOT EXISTS `tb_servico` (
   `nm_servico` varchar(256) DEFAULT NULL,
   `ds_servico` varchar(256) DEFAULT NULL,
   PRIMARY KEY (`cd_servico`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 --
 -- Extraindo dados da tabela `tb_servico`
@@ -190,8 +187,7 @@ INSERT INTO `tb_servico` (`cd_servico`, `nm_servico`, `ds_servico`) VALUES
 (11, '', 'Barba e cabelo'),
 (12, '', 'Barba e cabelo'),
 (13, '', 'Barba e cabelo'),
-(14, 'Barba e Cabelo', 'Corte com a familia'),
-(15, 'Corte de cabelo', 'Preciso de corte de cabelo e Maquiagem ');
+(14, 'Barba e Cabelo', 'Corte com a familia');
 
 -- --------------------------------------------------------
 
@@ -215,7 +211,7 @@ CREATE TABLE IF NOT EXISTS `tb_servico_agendamento` (
 --
 
 INSERT INTO `tb_servico_agendamento` (`cd_servico_agendamento`, `cd_agendamento`, `cd_servico`, `vl_servico`, `cd_avaliacao_profissional`) VALUES
-(1, 7, 0, '424', 1);
+(1, 7, 0, 424, 1);
 
 -- --------------------------------------------------------
 
@@ -231,6 +227,44 @@ CREATE TABLE IF NOT EXISTS `tb_servico_profissional` (
   KEY `fk_servico_profissional_tb_profissional_idx` (`cd_profissional`),
   KEY `fk_servico_profissional_tb_servico_idx` (`cd_servico`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Restrições para as tabelas dumpadas
+--
+
+--
+-- Restrições para a tabela `tb_agendamento`
+--
+ALTER TABLE `tb_agendamento`
+  ADD CONSTRAINT `fk_tb_agendamento_tb_cliente` FOREIGN KEY (`cd_cliente`) REFERENCES `tb_cliente` (`cd_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_tb_agendamento_tb_profissional` FOREIGN KEY (`cd_profissional`) REFERENCES `tb_profissional` (`cd_profissional`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Restrições para a tabela `tb_endereco`
+--
+ALTER TABLE `tb_endereco`
+  ADD CONSTRAINT `fk_endereco_tb_endereco_c_p` FOREIGN KEY (`cd_tb_endereco_c_p`) REFERENCES `tb_endereco_cliente_profissional` (`cd_tb_endereco_c_p`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Restrições para a tabela `tb_endereco_cliente_profissional`
+--
+ALTER TABLE `tb_endereco_cliente_profissional`
+  ADD CONSTRAINT `tb_endereco_c_p_cliente` FOREIGN KEY (`cd_cliente`) REFERENCES `tb_cliente` (`cd_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `tb_endereco_c_p_profissional` FOREIGN KEY (`cd_profissional`) REFERENCES `tb_profissional` (`cd_profissional`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Restrições para a tabela `tb_servico_agendamento`
+--
+ALTER TABLE `tb_servico_agendamento`
+  ADD CONSTRAINT `fk_servico_agendamento_agendamento` FOREIGN KEY (`cd_agendamento`) REFERENCES `tb_agendamento` (`cd_agendamento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_servico_agendamento_servico` FOREIGN KEY (`cd_servico`) REFERENCES `tb_servico` (`cd_servico`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Restrições para a tabela `tb_servico_profissional`
+--
+ALTER TABLE `tb_servico_profissional`
+  ADD CONSTRAINT `fk_servico_profissional_tb_profissional` FOREIGN KEY (`cd_profissional`) REFERENCES `tb_profissional` (`cd_profissional`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_servico_profissional_tb_servico` FOREIGN KEY (`cd_servico`) REFERENCES `tb_servico` (`cd_servico`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

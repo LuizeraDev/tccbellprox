@@ -32,7 +32,7 @@
     <div class="container preto">
         <div class="row">
             <div class="col">
-
+                
                 <div class="card mt-5 mb-3 altura card-centraliza" style="max-width: 21rem; min-width: 21rem;">
                     <div class="row no-gutters">
                         <div class="col-md ">

@@ -50,7 +50,7 @@ if(isset($_POST['login'])){
         $_SESSION['logado']= true;
         $_SESSION['usu_email']= $login_usuario;
 
-        if($resultado[0]['cd_cpf_cliente'] == null || $resultado[0]['dt_nasc_cliente'] == null|| $resultado[0]['cd_logradouro'] == null){
+        if($resultado[0]['cd_cpf_cliente'] == null || $resultado[0]['dt_nasc_cliente'] == null){
             header("location:../paginas/index.php"); // direciona para a index
 
         

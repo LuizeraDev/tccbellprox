@@ -34,8 +34,8 @@ $logarray2 = $array['cd_tel_cell_cliente'];
     }
 //INSERINDO VALORES   
     elseif($logarray != $email && $logarray2 != $celular){
-        $res = $con->query("INSERT INTO tb_cliente (nm_cliente,cd_senha_cliente,nm_email_cliente,cd_tel_cell_cliente) 
-        VALUES ('$nome','$senha', '$email', '$celular')");
+        $res = $con->query("INSERT INTO tb_cliente (nm_cliente,cd_senha_cliente,nm_email_cliente,cd_tel_cell_cliente,ds_caminho_img) 
+        VALUES ('$nome','$senha', '$email', '$celular','avatar.png')");
         echo"<meta charset='utf-8'><script language='javascript' type='text/javascript'>alert('Cliente cadastrado com sucesso!');
         window.location.href='login.php';</script>";
     }
@@ -64,8 +64,8 @@ else if($radiobutton == "2"){
         }
     //INSERINDO VALORES   
         else if($logarray3 != $email && $logarray4 != $celular) {
-            $res = $con->query("INSERT INTO tb_profissional (nm_profissional,cd_senha_profissional,nm_email_profissional,cd_tel_cell_profissional) 
-            VALUES ('$nome','$senha', '$email', '$celular')");
+            $res = $con->query("INSERT INTO tb_profissional (nm_profissional,cd_senha_profissional,nm_email_profissional,cd_tel_cell_profissional,ds_caminho_img) 
+            VALUES ('$nome','$senha', '$email', '$celular','avatar.png')");
              echo"<meta charset='utf-8'><script language='javascript' type='text/javascript'>alert('Profissional cadastrado com sucesso!');
              window.location.href='login.php';</script>";
         }
