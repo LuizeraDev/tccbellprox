@@ -16,7 +16,7 @@
 
 
     $comandoDataSQL = "INSERT INTO tb_agendamento(dt_agendamento, hr_agendamento, cd_cliente, cd_profissional) VALUES";
-    $comandoDataSQL .= " ('$data', '$tempo', '$cd_cliente[cd_cliente]',  '$cd_profissional[cd_profissional]' )";
+    $comandoDataSQL .= " ('$data', '$tempo', '$cd_cliente',  '$cd_profissional[cd_profissional]' )";
     $resComDTsql = $con->query($comandoDataSQL) ;
 
     $comandoMsgSQL = "INSERT INTO `tb_servico`(`nm_servico`, `ds_servico`) VALUES"; 

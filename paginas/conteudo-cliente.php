@@ -1,12 +1,24 @@
 ﻿<?php 
 include('select-servicos.php');
 $nm_cliente = $informacoes[0]['nm_cliente'];
+echo $cd_cliente;
+
+$comandoSQLfoto =  "SELECT ds_caminho_img from tb_cliente where cd_cliente = '$cd_cliente'";
+$resultado_foto = mysqli_query($con, $comandoSQLfoto);
+$resultado_foto = mysqli_fetch_array( $resultado_foto);
+
+
 
 
 
 include "detalhes.php";
 include "select-servicos.php";
 ?>
+<pre>
+<?php
+var_dump($resultado_foto);
+?>
+</pre>
 <div class="container">
 
     <div class="row">
@@ -27,6 +39,9 @@ include "select-servicos.php";
         </div>
 
         <div class="col-md-6 ">
+            <?php 
+                 
+            ?>
 
             <h2 class="text-center ">Seus servicos</h2>
             <div class="container ">
@@ -82,8 +97,7 @@ include "select-servicos.php";
             <form class="imagem" action="../paginas/fotos/upload.php" method="POST" enctype="multipart/form-data">
                 <br />
                 <?php
-
-                    include('fotos/select-foto.php');               
+              
 
 
                     echo "<img class='imgProf' src=fotos/arquivos/".$resultado_foto['ds_caminho_img'];
