@@ -8,7 +8,6 @@ $resultado_foto = mysqli_query($con, $comandoSQLfoto);
 $resultado_foto = mysqli_fetch_array( $resultado_foto);
 
 include "detalhes.php";
-include "select-servicos.php";
 ?>
 <div class="container">
 
