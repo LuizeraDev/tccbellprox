@@ -1,5 +1,7 @@
 <?php 
 include "../login/confirma-login-paginas.php";
+include "detalhes.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

@@ -1,8 +1,8 @@
 <?php
-
 include '../../login/conecta-banco.php';
 include '../../login/confirma-login-paginas.php';
-$cd_cliente = $informacoes[0]['cd_cliente'];
+$cd_profissional = $informacoes2[0]['cd_profissional'];
+
 if( $_FILES ) { // Verificando se existe o envio de arquivos.
 	
 	if(isset($_FILES['arquivo']) ) { // Verifica se o campo não está vazio.
@@ -10,7 +10,7 @@ if( $_FILES ) { // Verificando se existe o envio de arquivos.
 		$dir = './arquivos/'; // Diretório que vai receber o arquivo.
 		$tmpName = $_FILES['arquivo']['tmp_name']; // Recebe o arquivo temporário.
 		$name = $_FILES['arquivo']['name']; // Recebe o nome do arquivo.
-		$upImg = "UPDATE tb_cliente SET ds_caminho_img = '$name' where cd_cliente = '$cd_cliente'";
+		$upImg = "UPDATE tb_profissional SET ds_caminho_img = '$name' where cd_profissional = '$cd_profissional'";
 		$resultadoUP = $con->query($upImg) ;
 
 
@@ -20,11 +20,10 @@ if( $_FILES ) { // Verificando se existe o envio de arquivos.
             echo"<meta charset='utf-8'>
             <script language='javascript' type='text/javascript'>
             alert('Foto Adicionada com sucesso');
-            window.location.href='../index.php';</script>";
+            window.location.href='index.php';</script>";
 		}else {
 			echo "<p align=center>O arquivo não pode ser copiado para o servidor.</p>";
 		}
 	}
 
 }
-

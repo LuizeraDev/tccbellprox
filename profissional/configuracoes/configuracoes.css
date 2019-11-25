@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .overlay {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #profile-card {
+    background-color: rgba(255, 255, 255,0.7);
+    box-shadow: 0px 3px 13px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width: 340px;
+    padding: 0 20px 20px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .profile-switch {
+    width: 40px;
+    height: 20px;
+    display: inline-block;
+  }
+  
+  .profile-switch input {
+    display: none;
+  }
+  
+  .profile-switch .profile-slider {
+    position: absolute;
+    background-color: rgb(36, 40, 88);
+    width: inherit;
+    height: inherit;
+    border: 1px solid #ccc;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: background-color 1s linear;
+  }
+  
+  .profile-switch .profile-slider:before {
+    position: absolute;
+    left: 0px;
+    content: "";
+    height: 20px;
+    width: 20px;
+    border-radius: 50px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    transition: .4s, background-color 1s linear;
+  }
+  
+  .profile-switch input:checked + .profile-slider {
+    background-color: #922a94;
+  }
+  
+  .profile-switch input:checked + .profile-slider:before {
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+  
+  .overlay #profile-card header .profile-info {
+    text-align: left;
+  }
+  
+  .overlay #profile-card main {
+    text-align: left;
+  }
+  
+  .overlay #profile-card footer a {
+    width: 100%;
+    margin-top: 5px;
+    color: #fff;
+    padding: 5px 0;
+    display: block;
+  }
+
+  
+  a.save-button {
+    background-color: #922a94;
+    border-radius: 30px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    width:30px;
+  }
+  
+  a.logout-button {
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+  
+  a.logout-button:hover,
+  a.save-button:hover {
+    opacity: 0.8;
+  }
+  
+  .profile-item { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+  }
+  
+  .profile-label {
+    width: 260px;
+  }
+  
+  .profile-label a {
+    text-decoration: none;
+    color: #922a94;
+    font-weight: bold;
+    transition: all 0.2s ease;
+  }
+  
+  .profile-label a:hover {
+    color: rgb(71, 76, 141);
+    opacity: 0.8;
+  }
+
+  .delete-acount a:hover{
+    color: #922a94;
+  }
+  
+  .profile-label .delete-acount{
+    color: rgb(36, 40, 88);
+  }
+
+.teste{
+    text-align: left;
+}
+
+.btn-info{
+    width: 40%;
+}
+
+.btn-danger{
+    width: 40%;
+    margin-left:18.4%;
+}
+.btn-danger .btn-info:hover{
+  outline: 0;
+}

@@ -18,7 +18,7 @@
 				   if($informacoes != null)
 					   { echo $informacoes[0]['nm_cliente'];}
 					   } else 
-					   		{echo $resultado_prof[0]['nm_profissional'];}; ?></h3>
+					   		{echo $informacoes2[0]['nm_profissional'];}; ?></h3>
 
 	</div>
 	
@@ -34,37 +34,37 @@
 
 		<pre>
 			<?php
-			var_dump($resultados_servicos);
+			// var_dump($resultados_servicos);
 			?>
 		<pre>
 		
-
-			<tr>
-				<td class='text-left'>
-
-					<?php 
-						echo $resultados_servicos['nm_servico'] ;
-					
-					?>
-				</td>
-				<td class='text-left'>
-					<?php
-						echo $resultados_servicos['dt_agendamento'];	
-
+			<?php foreach($resultados_servicos as $d => $aff) { ?>
+			
+				<?php if($resultados_servicos || null) { ?>
+				<tr>
+					<td class='text-left'>
+						<?php 
+							echo $resultados_servicos[$d]['nm_servico'] ;
 						?>
-				</td>
-				<td class='text-left'>
-					<center>
-					<?php
-	
+					</td>
+					<td class='text-left'>
+						<?php
+							echo $resultados_servicos[$d]['dt_agendamento'];	
+							?>
+					</td>
+					<td class='text-left'>
+						<center>
+						<?php
+								echo $resultados_servicos[$d]['vl_servico'];
+							?>
+						</center>
+					</td> 
+				</tr>
+				<?php } ?> 
 
-							echo $resultados_servicos['vl_servico'];
-				
-						?>
-					</center>
-				</td> 	
+			<?php } ?>
 
-			</tr>
+			
 		</tbody>
 	</table>
 

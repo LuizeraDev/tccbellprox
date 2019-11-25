@@ -2,7 +2,7 @@
 include('verificar-login.php');
 
 if(isset($_SESSION['nm_profissional'])){
-$resultado_prof = $_SESSION['nm_profissional']; //NECESSARIO
+$informacoes2 = $_SESSION['nm_profissional']; //NECESSARIO
 }
 if(isset($_SESSION['nm_cliente'])){
 $informacoes = $_SESSION['nm_cliente']; //NECESSARIO]

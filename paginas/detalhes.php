@@ -1,12 +1,10 @@
 <?php
-$query_profissional= ("SELECT cd_profissional, nm_profissional, ds_profissional, ds_caminho_img from tb_profissional");
-$resultado_profissional = mysqli_query($con,  $query_profissional);
-$resultado_profissional = mysqli_fetch_array( $resultado_profissional);
 
 
-$nm_profissional = $resultado_profissional['nm_profissional'];
-$ds_profissional = $resultado_profissional['ds_profissional'];
-$ds_caminho_img = $resultado_profissional['ds_caminho_img'];
+$cd_prof = $select_profi[0]['cd_profissional'];
+$nm_profissional = $select_profi[0]['nm_profissional'];
+$ds_profissional = $select_profi[0]['ds_profissional'];
+$ds_caminho_img = $select_profi[0]['ds_caminho_img'];
 
 
 

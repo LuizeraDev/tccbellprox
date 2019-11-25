@@ -31,7 +31,6 @@ if(isset($_POST['login'])){
     $_SESSION['nm_cliente'] = $informacoes; //NECESSARIO
     $_SESSION['cd_cliente'] = $informacoes; //NECESSARIO
 
-    $cliente = $_SESSION['cd_cliente'] = $informacoes;
     
 
      /* 
@@ -78,14 +77,16 @@ if($radiobutton == "4"){ /* verifica se o usuário é um profissional pelo radio
         //checando atras de resultados
         $checar_usuario=mysqli_num_rows($procurar);
         
-        $query_profissional = "SELECT cd_profissional,nm_profissional,nm_email_profissional,cd_tel_cell_profissional FROM tb_profissional WHERE cd_senha_profissional='$senha_usuario' and (cd_tel_cell_profissional = '$login_usuario' or nm_email_profissional ='$login_usuario')";
-        $resultado_prof = mysqli_query($con, $query_profissional);
-        $resultado_prof = mysqli_fetch_array($result);
+        $query = "SELECT cd_profissional,nm_profissional,nm_email_profissional,cd_tel_cell_profissional FROM tb_profissional WHERE cd_senha_profissional='$senha_usuario' and (cd_tel_cell_profissional = '$login_usuario' or nm_email_profissional ='$login_usuario')";
+        $result = mysqli_query($con, $query);
+        $result=mysqli_fetch_all($result,MYSQLI_ASSOC);
+        $informacoes2 = $result;
         
-        $_SESSION['cd_profissional'] = $resultado_prof; //NECESSARIO
-        $_SESSION['nm_email_profissional'] = $resultado_prof; //NECESSARIO
-        $_SESSION['cd_tel_cell_profissional'] = $resultado_prof; //NECESSARIO
-        $_SESSION['nm_profissional'] = $resultado_prof; //NECESSARIO
+        $_SESSION['cd_profissional'] = $informacoes2; //NECESSARIO
+        $_SESSION['nm_email_profissional'] = $informacoes2; //NECESSARIO
+        $_SESSION['cd_tel_cell_profissional'] = $informacoes2; //NECESSARIO
+        $_SESSION['nm_profissional'] = $informacoes2; //NECESSARIO
+
 
         if($checar_usuario > 0){
             //se achou resultado ele vai gravar uma session com o nome logado e com o login do cliente

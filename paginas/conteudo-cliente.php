@@ -1,24 +1,15 @@
 ﻿<?php 
 include('select-servicos.php');
 $nm_cliente = $informacoes[0]['nm_cliente'];
-echo $cd_cliente;
 
+$informacoes[0]['cd_cliente'] = $cd_cliente;
 $comandoSQLfoto =  "SELECT ds_caminho_img from tb_cliente where cd_cliente = '$cd_cliente'";
 $resultado_foto = mysqli_query($con, $comandoSQLfoto);
 $resultado_foto = mysqli_fetch_array( $resultado_foto);
 
-
-
-
-
 include "detalhes.php";
 include "select-servicos.php";
 ?>
-<pre>
-<?php
-var_dump($resultado_foto);
-?>
-</pre>
 <div class="container">
 
     <div class="row">
@@ -29,7 +20,6 @@ var_dump($resultado_foto);
             <div class="list-group">
                 <h3 class="list-group-item list-group-item-action menu text-center " style="color:white;"> Menu</h3>
                 <a href="profissionais.php" class="list-group-item list-group-item-action">Realizar agendamentos</a>
-                <a href="servicos.php" class="list-group-item list-group-item-action">Historico de servicos</a>
                 <a href="configuracoes.php" class="list-group-item list-group-item-action">Configurações</a>
 
             </div>
@@ -39,25 +29,23 @@ var_dump($resultado_foto);
         </div>
 
         <div class="col-md-6 ">
-            <?php 
-                 
-            ?>
+        
 
             <h2 class="text-center ">Seus servicos</h2>
             <div class="container ">
                 <div class="row">
                     <div class="col-md">
                         <?php foreach( $resultados_agendamento as $d => $dad){
-                        if($resultados_agendamento[$d]['cd_agendamento'] == true){ ?>
+                        if($resultados_agendamento[$d]['cd_agendamento'] == true ){ ?>
 
                         <div class="card mt-5 mb-3 altura card-centraliza">
                             <div class="row no-gutters">
                                 <div class="col-md ">
-                                    <br /><img class="imgProf" src="../img/paulo.jpg">
+                                    <br /><?php echo "<img class='imgProf' src=../profissional/foto/arquivos/".$resultados_agendamento[$d]['ds_caminho_img'].">";?>
                                 </div>
                                 <div class="col-md">
                                     <div class="card-body">
-                                        <h5 class="card-title">Agendamento com </h5>
+                                        <h5 class="card-title">Agendamento com <?php echo $resultados_agendamento[$d]['nm_profissional'];?></h5>
                                         <p class="card-text ">data dos
                                             agendamentos<br><?php echo  inverteData($resultados_agendamento[$d]['dt_agendamento']); ?><br><br>
                                         </p>
@@ -72,7 +60,10 @@ var_dump($resultado_foto);
                                                 }
                                                 ?>
                                         <br>
-                                        status de agendamento
+                                        <p>Por favor entre em contato com o profissional pelo numero ou email: <?php
+                                            echo $resultados_agendamento[$d]['cd_tel_cell_profissional'];
+
+                                        ?></p>
                                     </div>
                                 </div>
                             </div>
