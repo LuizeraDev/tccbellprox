@@ -10,7 +10,7 @@
     $cd_cliente = $informacoes[0]['cd_cliente'];
     
 
-    $selectProfi = "SELECT cd_profissional FROM `tb_profissional` WHERE 1" ;
+    $selectProfi = "SELECT cd_profissional FROM tb_profissional WHERE " ;
     $cd_profissional = mysqli_query($con,  $selectProfi);
     $cd_profissional = mysqli_fetch_array( $cd_profissional,MYSQLI_ASSOC);
 

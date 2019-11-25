@@ -1,7 +1,7 @@
 <?php 
  include "../login/confirma-login-paginas.php";
  include "detalhes.php";
-  header("Content-type: text/html; charset=utf-8"); 
+ include 'sql/select-profissional.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -10,7 +10,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset="utf-8">
     <title>Bell Prox - Profissionais</title>
     <!--LOGO-->
-    <link rel="shortcut icon" href="../img/logo.png" />
+    <link rel="shortcut icon" href="../img/logo.png" />  
 
     <link rel="stylesheet" type="text/css" href="../index/main.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" />
@@ -26,8 +26,9 @@
         ?>
         <pre>   
             <?php
-                echo $nm_profissional;
-                echo $ds_caminho_img;
+                echo $informacoes[0]['nm_cliente'];
+                echo "<br>";
+                echo$resultado_prof[0]['cd_profissional'];
             ?>
         </pre>
 
@@ -38,12 +39,12 @@
                 <div class="border mt-1 mb-4" >
                     <div class="row no-gutters">
                         <div class="col-md ">
-                            <br /><img class="imgProf p-2 mr-auto " src="../img/<?php echo $ds_caminho_img?>"></br>
+                            <br /><img class="imgProf p-2 mr-auto " src="../profissional/foto/arquivos/<?php echo $resultado_prof[0]['ds_caminho_img']?>"></br>
                             </div>
                             <div class="col-md">
                                 <br>
-                                <h5 class="card-title"><?php echo $nm_profissional;?> </h5>
-                                <p class="card-text "><?php echo $ds_profissional; ?> <br><br></p>
+                                <h5 class="card-title"><?php echo $resultado_prof[0]['nm_profissional'];?> </h5>
+                                <p class="card-text "><?php echo $resultado_prof[0]['ds_profissional']; ?> <br><br></p>
                                 <button type="button" class="button pos" data-toggle="modal"
                                     data-target="#exampleModalLong">
                                     Agendar
@@ -55,7 +56,7 @@
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLongTitle">Agendar com <?php echo $nm_profissional?>?</h5>
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Agendar com <?php echo $resultado_prof[0]['nm_profissional']?>?</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
@@ -85,7 +86,7 @@
                                                             autocomplete="off"  />
                                                         <label for="username">Deseja enviar alguma mensagem para o profissional?</label>
                                                     </div>
-                                                    <p>Qual servico você gostaria de realizar com <?php echo $nm_profissional;?> ( 1 por agendamento, para mais servicos, realizar outro agendamento) </p>
+                                                    <p>Qual servico voce gostaria de realizar com <?php echo $resultado_prof[0]['nm_profissional'];?> ( 1 por agendamento, para mais servicos, realizar outro agendamento) </p>
                                                     <div class="text-input">
                                                         <input id="username" type="text" name="servico"
                                                             placeholder="Escolher servico"
@@ -109,41 +110,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md ">
-                <div class="border mt-1 mb-4" >
-                    <div class="row no-gutters">
-                        <div class="col-md ">
-                            <br /><img class="imgProf p-2 mr-auto" src="../img/clodoaldo.jpg">
-                        </div>
-                        <div class="col-md ">
-                            <div class="card-body">
-                                <h5 class="card-title">Clodoaldo Barbosa</h5>
-                                <p class="card-text text">Realizo trabalhos como pédicure, cortes de cabelo e muitos
-                                    outros trabalhos para voce!!</p>
-                                <button class="button"><span>Agendar</span></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-md  ">
-                <div class="border mt-1 mb-4">
-                    <div class="row no-gutters">
-                        <div class="col-md ">
-                            <br /><img class="imgProf p-2 mr-auto" src="../img/camila.jpg">
-                        </div>
-                        <div class="col-md ">
-                            <div class="card-body">
-                                <h5 class="card-title">Camila Prieto</h5>
-                                <p class="card-text">Realizo trabalhos como pédicure, cortes de cabelo e muitos outros
-                                    trabalhos para voce!!</p>
-                                <button class="button"><span>Agendar</span></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
+    
 
                         </div>
                     </div>

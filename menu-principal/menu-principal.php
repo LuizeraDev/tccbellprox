@@ -7,21 +7,27 @@
 <div>
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light menu" align="center" style="max-heigth: 15px; min-heigth: 15px;">
-  <img src="img/logo.png" class="navbar-brand img">
-  <h4 class="text-white">BellProx</h4>
-  <div class="collapse navbar-collapse" id="navbarNav">
-  <ul class="menu__list ml-auto">
-        <li class="menu__group"><a href="index.php" style="color: white; text-decoration: none;" class="menu__link">Novidades</a></li>
-        <li class="menu__group"><a href="paginas/sobre.php" style="color: white" class="menu__link">Sobre</a></li>
-        <li class="menu__group">
-            <a href="login/login.php" style="color: white" class="menu__link">
-            <span>acesso</span>
-            <i class="fas fa-user-circle fa-lg"></i>
-            </a>
-        </li>
-    </ul>
-  </div>
-</nav>
-
+<nav class="navbar navbar-expand-lg menu" align="center" >
+        <img src="img/logo.png" class="navbar-brand img">
+        <h4 class="text-white">BellProx</h4>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto ">
+                <li class="nav-item ">
+                    <a class="nav-link" href="index.php "style="color:white; " >Novidades</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php"style="color:white;"  >Planos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index/sobre.php" style="color:white;"  >Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login/login.php"  >
+                    <span style="color:white;">Acesso</span>
+                    <i class="fas fa-user-circle fa-lg" style="color:white;"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 

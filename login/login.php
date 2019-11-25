@@ -92,9 +92,7 @@
 			</div>
 		</div>
 		<br><br>
-		<?php 
-include "../index/footer.php"
-?>
+
 	</body>
 	<script src="login.js"></script>
 

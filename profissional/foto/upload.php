@@ -20,7 +20,7 @@ if( $_FILES ) { // Verificando se existe o envio de arquivos.
             echo"<meta charset='utf-8'>
             <script language='javascript' type='text/javascript'>
             alert('Foto Adicionada com sucesso');
-            window.location.href='index.php';</script>";
+            window.location.href='../index.php';</script>";
 		}else {
 			echo "<p align=center>O arquivo não pode ser copiado para o servidor.</p>";
 		}
