@@ -81,7 +81,7 @@
 				VALUES (default,'".$variavel."','".$tema."','".$cate."','".$foto."','".$tipo."',0)"; 
 				
 				
-				//var_dump ($textoSQL); die();
+				//mp ($textoSQL); die();
 				
 				$result = mysqli_query($bd, $textoSQL) or die (mysqli_error($bd));
 				

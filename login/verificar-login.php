@@ -35,7 +35,7 @@ if(isset($_POST['login'])){
 
      /* 
     foreach ($result as $linha => $coluna) {
-        var_dump($coluna['nm_cliente']);
+        mp($coluna['nm_cliente']);
     }
     die();
     */

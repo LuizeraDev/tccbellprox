@@ -174,7 +174,7 @@ function showSlides() {
   slideIndex++;
   if (slideIndex > slides.length) {slideIndex = 1} 
   slides[slideIndex-1].style.display = "block"; 
-  setTimeout(showSlides, 4000); // Troca a imagem a cada 3 segundos
+  setTimeout(showSlides, 2000); // Troca a imagem a cada 3 segundos
 }
 </script>
 </body>

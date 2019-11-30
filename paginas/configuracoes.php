@@ -26,7 +26,7 @@ include "../login/confirma-login-paginas.php";
       <p><i class="far fa-id-card">&nbsp;</i>Telefone Celular: 
       <?php  if(isset($informacoes)){if($informacoes != null){ echo $informacoes[0]['cd_tel_cell_cliente'];}}else{ echo $informacoes2[0]['cd_tel_cell_profissional']; } ?></p>
       <p><i class="fas fa-user-circle">&nbsp;</i>Nome: 
-      <?php  if(isset($informacoes)){ if($informacoes != null){ echo $informacoes[0]['nm_cliente'];}} else {echo $informacoes2[0]['nm_profissional'];}; // var_dump($nome_cliente[0]['nm_cliente']);?></p>
+      <?php  if(isset($informacoes)){ if($informacoes != null){ echo $informacoes[0]['nm_cliente'];}} else {echo $informacoes2[0]['nm_profissional'];}; // mp($nome_cliente[0]['nm_cliente']);?></p>
       <p><i class="fas fa-envelope">&nbsp;</i>Email: 
       <?php if(isset($informacoes)){if($informacoes != null){ echo $informacoes[0]['nm_email_cliente'];}} else{echo $informacoes2[0]['nm_email_profissional'];}?></p>
     </div>

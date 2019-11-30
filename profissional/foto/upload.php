@@ -1,5 +1,4 @@
 <?php
-include '../../login/conecta-banco.php';
 include '../../login/confirma-login-paginas.php';
 $cd_profissional = $informacoes2[0]['cd_profissional'];
 
