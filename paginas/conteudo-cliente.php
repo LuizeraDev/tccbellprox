@@ -91,18 +91,15 @@ include "detalhes.php";
                     echo "<img class='imgProf' src=fotos/arquivos/".$resultado_foto['ds_caminho_img'];
           
                     ?>
-                <label for="arquivo">Arquivo:</label> <input type="file" name="arquivo" id="arquivo" /> <br />
-                <input type="submit" value="Enviar" />
-                <br />
-                <br />
-
-             
-            
+                <p style="display:block; margin:auto;;">
+                Arquivo:
+                <input type="file" style="margin-left:-30px; border:none; padding:1%;" class="ghost" name="arquivo" id="arquivo"> <br><br>
+                <input type="submit" style="margin-left:25%; border:none;" class="ghost" value="Enviar">
+                </p>
+                <br>
+                <br>
                 <br>
             </form>
-
-
         </div>
     </div>
-
 </div>

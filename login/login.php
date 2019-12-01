@@ -72,7 +72,8 @@
 					<!-- RADIO BUTTON-->
 					<button class="btn-registrar">Login</button>
 					<a href="esqueceu-senha.php">Esqueceu a sua senha?</a>
-					<a href="#" id="signUp2" class="ContaGratuita">Crie uma conta gratuitamente</a>
+					<a href="#" id="signUp2"  style="margin-top: -10px;" class="ContaGratuita">Crie uma conta gratuitamente</a>
+					<a href="../index.php" class="ContaGratuita" > Voltar a Página Inicial</a>
 				</form>
 			</div>
 			<div class="overlay-container">

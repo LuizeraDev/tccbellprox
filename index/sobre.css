@@ -19,6 +19,7 @@ padding: 10px 430px;
 	letter-spacing: 1px;
     text-transform: uppercase;
     margin-left: 43%;
+    outline:none;
 }
 .linha{
    border: 0.5px dashed rgb(160, 157, 157);

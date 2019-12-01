@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 -- phpMyAdmin SQL Dump
 -- version 4.0.4.2
 -- http://www.phpmyadmin.net
@@ -44,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `tb_agendamento` (
 --
 -- Extraindo dados da tabela `tb_agendamento`
 --
-=======
+
 -- MySQL Workbench Forward Engineering
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
@@ -260,13 +259,11 @@ CREATE TABLE IF NOT EXISTS `db_bellprox`.`tb_portifolio` (
 ENGINE = InnoDB;
 
 -- INSERT 
->>>>>>> 4af1eaf6dc434e8d3a2ed4df741136ca96fc0f25
 
 INSERT INTO `tb_agendamento` (`cd_agendamento`, `dt_agendamento`, `hr_agendamento`, `cd_cliente`, `cd_profissional`, `ds_confirmacao_agendamento`) VALUES
 (7, '2019-11-02', '23:59:00', 2, 3, 1),
 (20, '3232-03-31', '03:23:00', 2, 3, NULL);
 
-<<<<<<< HEAD
 -- --------------------------------------------------------
 
 --
@@ -289,8 +286,6 @@ CREATE TABLE IF NOT EXISTS `tb_cliente` (
 --
 -- Extraindo dados da tabela `tb_cliente`
 --
-=======
->>>>>>> 4af1eaf6dc434e8d3a2ed4df741136ca96fc0f25
 
 INSERT INTO `tb_cliente` (`cd_cliente`, `nm_cliente`, `cd_tel_fixo_cliente`, `cd_tel_cell_cliente`, `nm_email_cliente`, `cd_cpf_cliente`, `dt_nasc_cliente`, `cd_senha_cliente`, `ds_caminho_img`) VALUES
 (1, 'Yago Silva de Jesus', '1334063601', '2147483647', 'yago@hotmail.com', '1822831008', '1996/02/20', '123', NULL),
@@ -302,7 +297,6 @@ INSERT INTO `tb_cliente` (`cd_cliente`, `nm_cliente`, `cd_tel_fixo_cliente`, `cd
 INSERT INTO `tb_endereco` (`cd_endereco`, `cep`, `nm_rua`, `nm_bairro`, `nm_cidade`, `nm_estado`, `cd_tb_endereco_c_p`) VALUES
 (1, '11345045', 'irma maria', 'samarita', 'são vicente', 'São Paulo', 1);
 
-<<<<<<< HEAD
 -- --------------------------------------------------------
 
 --
@@ -356,12 +350,9 @@ CREATE TABLE IF NOT EXISTS `tb_profissional` (
 -- Extraindo dados da tabela `tb_profissional`
 --
 
-=======
->>>>>>> 4af1eaf6dc434e8d3a2ed4df741136ca96fc0f25
 INSERT INTO `tb_profissional` (`cd_profissional`, `nm_profissional`, `cd_tel_fixo_profissional`, `cd_tel_cell_profissional`, `nm_email_profissional`, `cd_cpf_profissional`, `dt_nasc_profissional`, `cd_senha_profissional`, `ds_profissional`, `ds_caminho_img`) VALUES
 (3, 'Camila Andrade', NULL, '(13) 9815-84772', 'camila_andrade@hotmail.com', NULL, NULL, '123', 'Sou um profissional especializado na beleza e bem-estar.', 'imagem.jpeg');
 
-<<<<<<< HEAD
 -- --------------------------------------------------------
 
 --
@@ -378,8 +369,6 @@ CREATE TABLE IF NOT EXISTS `tb_servico` (
 --
 -- Extraindo dados da tabela `tb_servico`
 --
-=======
->>>>>>> 4af1eaf6dc434e8d3a2ed4df741136ca96fc0f25
 
 INSERT INTO `tb_servico` (`cd_servico`, `nm_servico`, `ds_servico`) VALUES
 (1, 'corte de sobra', ''),
@@ -397,7 +386,6 @@ INSERT INTO `tb_servico` (`cd_servico`, `nm_servico`, `ds_servico`) VALUES
 INSERT INTO `tb_servico_agendamento` (`cd_servico_agendamento`, `cd_agendamento`, `cd_servico`, `vl_servico`, `cd_avaliacao_profissional`) VALUES
 (1, 7, 0, '424', 1);
 
-<<<<<<< HEAD
 -- --------------------------------------------------------
 
 --
@@ -413,55 +401,10 @@ CREATE TABLE IF NOT EXISTS `tb_servico_profissional` (
   KEY `fk_servico_profissional_tb_servico_idx` (`cd_servico`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Constraints for dumped tables
---
-
---
--- Limitadores para a tabela `tb_agendamento`
---
-ALTER TABLE `tb_agendamento`
-  ADD CONSTRAINT `fk_tb_agendamento_tb_cliente` FOREIGN KEY (`cd_cliente`) REFERENCES `tb_cliente` (`cd_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_tb_agendamento_tb_profissional` FOREIGN KEY (`cd_profissional`) REFERENCES `tb_profissional` (`cd_profissional`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_endereco`
---
-ALTER TABLE `tb_endereco`
-  ADD CONSTRAINT `fk_endereco_tb_endereco_c_p` FOREIGN KEY (`cd_tb_endereco_c_p`) REFERENCES `tb_endereco_cliente_profissional` (`cd_tb_endereco_c_p`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_endereco_cliente_profissional`
---
-ALTER TABLE `tb_endereco_cliente_profissional`
-  ADD CONSTRAINT `fk_endereco_c_p_cliente` FOREIGN KEY (`cd_cliente`) REFERENCES `tb_cliente` (`cd_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_endereco_c_p_profissional` FOREIGN KEY (`cd_profissional`) REFERENCES `tb_profissional` (`cd_profissional`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_portifolio`
---
-ALTER TABLE `tb_portifolio`
-  ADD CONSTRAINT `fk_protifolio_tb_profissional` FOREIGN KEY (`cd_profissional`) REFERENCES `tb_profissional` (`cd_profissional`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_servico_agendamento`
---
-ALTER TABLE `tb_servico_agendamento`
-  ADD CONSTRAINT `fk_servico_agendamento_agendamento` FOREIGN KEY (`cd_agendamento`) REFERENCES `tb_agendamento` (`cd_agendamento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_servico_agendamento_servico` FOREIGN KEY (`cd_servico`) REFERENCES `tb_servico` (`cd_servico`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_servico_profissional`
---
-ALTER TABLE `tb_servico_profissional`
-  ADD CONSTRAINT `fk_servico_profissional_tb_profissional` FOREIGN KEY (`cd_profissional`) REFERENCES `tb_profissional` (`cd_profissional`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_servico_profissional_tb_servico` FOREIGN KEY (`cd_servico`) REFERENCES `tb_servico` (`cd_servico`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-=======
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
->>>>>>> 4af1eaf6dc434e8d3a2ed4df741136ca96fc0f25

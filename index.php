@@ -8,9 +8,10 @@
 <link rel="shortcut icon" href="img/logo.png" />
 <!--MAIN CSS-->
 <link rel="stylesheet" type="text/css" href="index/main.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../index/sobre.css" media="screen" />
 </head>
 
-<body>
+<body style="background-color: rgb(15, 15, 15);">
 <?php 
 include "menu-principal/menu-principal.php";
 include "slide/slide.php";

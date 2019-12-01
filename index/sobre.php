@@ -26,13 +26,13 @@
                     <a class="nav-link" href="../index.php "style="color:white; " >Novidades</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php"style="color:white;"  >Planos</a>
+                    <a class="nav-link" href="../index.php"style="color:white;"  >Planos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index/sobre.php" style="color:white;"  >Sobre</a>
+                    <a class="nav-link" href="#" style="color:white;"  >Sobre</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login/login.php"  >
+                    <a class="nav-link" href="../login/login.php"  >
                     <span style="color:white;">Acesso</span>
                     <i class="fas fa-user-circle fa-lg" style="color:white;"></i>
                     </a>
