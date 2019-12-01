@@ -15,7 +15,7 @@ include "detalhes.php"
 </head>
 <body>
 <?php 
-  include "../../index/menu.php";
+  include "../../index/menu-profi.php";
 ?>
 <div class="overlay">
 <div id="profile-card">

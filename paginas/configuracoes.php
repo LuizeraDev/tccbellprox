@@ -15,7 +15,7 @@ include "../login/confirma-login-paginas.php";
 </head>
 <body>
 <?php 
-  include "../index/menu.php";
+  if(isset($informacoes)){if($informacoes != null){  include "../index/menu.php";}}else{ include "../../index/menu-profi.php"; }
 ?>
 <div class="overlay">
 <div id="profile-card">

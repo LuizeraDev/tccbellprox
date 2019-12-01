@@ -15,7 +15,7 @@ integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28an
 
 
   <!-- Navbar brand -->
-  <a class="navbar-brand text-white "  href="../paginas/index.php"><h4>Bell Prox<h4></a>
+  <a class="navbar-brand text-white "  href="../../profissional/index.php"><h4>Bell Prox<h4></a>
  
 
 </nav>

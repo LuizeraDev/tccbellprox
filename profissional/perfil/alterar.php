@@ -21,7 +21,7 @@ include '../sql/select-foto.php';
 
     <body>
         <?php 
-            include "../../index/menu.php";
+            include "../../index/menu-profi.php";
         ?>
         <div style="margin-top: 30px;">
         <div class="container">

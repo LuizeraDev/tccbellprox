@@ -18,7 +18,7 @@ include "detalhes.php";
 </head>
 <body>
 <?php 
-    include "../index/menu.php";
+    include "../index/menu-profi.php";
     include "conteudo-profissional.php";
 ?>
 </body>
