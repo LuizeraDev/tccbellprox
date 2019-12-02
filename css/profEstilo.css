@@ -67,3 +67,60 @@
 }
 
 
+
+
+.formulario{
+position: center;
+padding: 10px 430px;
+}
+
+.ghost{
+border-radius: 20px;
+background-color:  #922c93;
+color: #FFFFFF;
+font-size: 12px;
+font-weight: bold;
+padding: 12px 45px;
+letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-left: 43%;
+  outline:none;
+}
+.linha{
+ border: 0.5px dashed rgb(160, 157, 157);
+}
+/*background:linear-gradient(rgba(255, 255, 255, 0.699),rgba(255, 255, 255, 0.664)),url("../img/fundo2.jpg") no-repeat;*/
+.linha{
+  height: 150px;
+}
+.p2,.p4{
+  float: right;
+}
+
+img{
+  border-radius: 100%;
+  object-fit: cover;
+  height: 120px;
+  width: 120px;
+}
+.foto2{
+  border-color: black;
+  float: right;
+}
+.conteudo-sobre h6{
+  font-weight: 700;
+  text-align: justify;
+  padding: 20px 200px;
+}
+.barra-titulo{
+  width: 200px;
+  border: 2px solid black;
+}
+.titulo-desenvolvedores{
+  padding: 15px;
+}
+.barra-titulo-desenvolvedores{
+  width: 400px;
+  border: 2px solid black;
+}
+

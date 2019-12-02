@@ -12,7 +12,7 @@ $resultados_servicos = mysqli_query($con, $query_servico);
  $resultados_servicos = mysqli_fetch_all( $resultados_servicos,MYSQL_ASSOC);
 
 
- $query_agendamento = "SELECT cd_agendamento,dt_agendamento, ds_confirmacao_agendamento,ds_caminho_img,nm_profissional,cd_tel_cell_profissional
+ $query_agendamento = "SELECT cd_agendamento,dt_agendamento, ds_confirmacao_agendamento,ds_caminho_img,nm_profissional,cd_tel_cell_profissional,nm_email_profissional
  from tb_agendamento
      join tb_profissional on tb_profissional.cd_profissional = tb_agendamento.cd_profissional
          where cd_cliente= '$cd_cliente' ";

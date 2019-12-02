@@ -30,7 +30,7 @@
     if($linhadaDT == 1){
     echo"<meta charset='utf-8'>
     <script language='javascript' type='text/javascript'>
-    alert('Obaa!! Seu agendamento será confirmado em breve!!<br> O profissional irá confimar o serviço e diponibilizará o valor em breve!!');
+    alert('Obaa!! Seu agendamento será confirmado em breve!! O profissional irá confimar o serviço e diponibilizará o valor em breve!!');
     window.location.href='profissionais.php';</script>";
     }    else{
         echo"<meta charset='utf-8'>
