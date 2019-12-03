@@ -4,11 +4,11 @@ include "../login/confirma-login-paginas.php";
 $cd_profissional = $_GET['id'];
 
 $query_fotoprof = "SELECT cd_profissional,nm_profissional,ds_profissional, ds_caminho_img from tb_profissional
-    where cd_profissional = '$cd_profissional'";
+where cd_profissional = '$cd_profissional'";
 $resultado_prof =mysqli_query($con, $query_fotoprof);
 $resultado_prof = mysqli_fetch_all($resultado_prof,MYSQL_ASSOC);
-
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -72,7 +72,7 @@ $resultado_prof = mysqli_fetch_all($resultado_prof,MYSQL_ASSOC);
 
             </div>
             <div >
-                <button value="<?php echo $resultado_prof[0]['cd_profissional']?> "style="border-radius: 20px;background-color:  #922c93;color: #FFFFFF;outline:none; border:solid 1px black;padding:1%;display:block;margin:auto;">SALVAR INFORMAÇÕES</button>
+                <button value="<?php echo $resultado_prof[0]['cd_profissional']?>" style="border-radius: 20px;background-color:  #922c93;color: #FFFFFF;outline:none; border:solid 1px black;padding:1%;display:block;margin:auto;">SALVAR INFORMAÇÕES</button>
 
             </div>
         </div>
